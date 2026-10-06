@@ -7,6 +7,8 @@ interface ImageSliderProps {
   section: string;
   autoSlide?: boolean;
   interval?: number;
+  className?: string;
+  imageClassName?: string;
 }
 
 const ImageSlider: React.FC<ImageSliderProps> = ({
@@ -14,6 +16,8 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
   section,
   autoSlide = true,
   interval = 4000,
+  className = "",
+  imageClassName = "h-64 object-cover",
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -36,12 +40,12 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
   };
 
   return (
-    <div className="relative group">
+    <div className={`relative group ${className}`}>
       <div className="overflow-hidden rounded-lg bg-black/40 backdrop-blur-sm border border-gray-800/50">
         <img
           src={images[currentIndex]}
           alt={`${section} activity`}
-          className="w-full h-64 object-cover transition-transform duration-500 hover:scale-105 opacity-90"
+          className={`w-full ${imageClassName} transition-transform duration-500 hover:scale-105 opacity-90`}
         />
       </div>
       {images.length > 1 && (
