@@ -124,6 +124,7 @@ const samplePapers: ResearchPaper[] = [
 
 const categories = [
   "All",
+  "Extragalactic astronomy",
   "Exoplanets",
   "Cosmology",
   "Stellar Physics",
